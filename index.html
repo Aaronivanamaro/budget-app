@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body onload="loadApp()">
+
+<header class="header">
+
+    <div class="nm-c">
+        <input type="checkbox" class="checkbox" id="checkbox" onclick="toggleTheme()"/>
+        <label class="label" for="checkbox">    
+            <ion-icon class="sun" name="sunny-outline"></ion-icon>
+            <ion-icon class="moon" name="moon-outline"></ion-icon>
+            <div class="ball"></div>
+        </label>  
+    </div>
+
+    <div class="budget">
+        <h1 class="title">Personal Budget</h1>
+        <div class="header-value"></div>
+        <div class="c income-d">
+            <div class="income">Income</div>
+            <div class="right-h">
+                <div class="income-value"></div>
+                <div class="income-percentage"></div>
+            </div>
+        </div>
+        <div class="c expenses-d">
+            <div class="expenses">Expenses</div>
+            <div class="right-h">
+                <div class="expenses-value"></div>
+                <div class="expenses-percentage"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form id="form" onsubmit="return false">
+    <div class="add">
+        <div class="add-subcontainer">
+            <select id="type" class="add-type form-control">
+                <option class="option" value="income" selected>Income</option>
+                <option class="option" value="expenses">Expenses</option>
+            </select>
+            <input type="text" class="add-description form-control" placeholder="Description" id="description">
+            <input type="number" class="add-value form-control" placeholder="Value" id="value" step="any">
+            <input type="date" class="add-date form-control" id="date" step="any">            
+            <button class="add-btn" onclick="addNewInformation()">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+</form>
+
+<section class="section">
+
+    <div class="income-sec">
+        <h2 class="income-title">Income</h2>
+        <div id="list-income"></div>
+    </div>            
+
+    <div class="expenses-sec">
+        <h2 class="expenses-title">Expenses</h2>
+        <div id="list-expenses"></div>
+    </div>
+
+</section>
+ 
+
+<script src="/JS/BudgetInfo.js"></script>
+<script src="/JS/Expense.js"></script>
+<script src="/JS/Income.js"></script>
+<script src="/JS/app.js"></script>
+
+</body>
+</html>
